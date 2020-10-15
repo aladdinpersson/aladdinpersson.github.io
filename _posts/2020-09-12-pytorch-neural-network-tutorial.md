@@ -41,6 +41,8 @@ import torch.nn.functional as F # functions without parameters
 ```
 For loading the classical dataset [MNIST](https://pytorch.org/docs/stable/torchvision/datasets.html#mnist) we need the following packages
 from PyTorch. 
+<script src="https://gist.github.com/aladdinpersson/620d1357098bf866c5843ce1a8424676.js"></script>
+
 ```python
 from torch.utils.data import DataLoader # data management 
 import torchvision.datasets as datasets # standard datasets
