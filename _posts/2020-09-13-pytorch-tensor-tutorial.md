@@ -15,7 +15,6 @@ tags:
 > Note: There is a video based tutorial on YouTube which covers the same material as this blogpost,
 > and if you prefer to watch rather than read, then you can check out the video [here](https://youtu.be/x9JiIFvlUwk).
 
-
 In this post we want to get a solid foundation with tensors and their operations which
 really lay the foundation to all of deep learning. Linear algebra really. 
 All the fancy neural networks, you can imagine all start with tensor operations. 
@@ -31,15 +30,15 @@ tensor actually is.
 In programming terms you can view a tensor like a 
 multidimensional array, and in more mathematical terms a tensor is the generalization of 
 the terms scalar, vector and matrix to higher
-dimensions. Here a vector is a 1 dimensional tensor, and a matrix is a 
+dimensions. A vector is for example a 1 dimensional tensor, and a matrix is a 
 2 dimensional tensor. Expressed generally a tensor is a mathematical structure with shape 
-$(m_1,m_1,m_3, ...)$ is called a tensor. 
+$(m_1,m_1,m_3, ...)$. 
 
 I will divide this post into a couple of different sections, we will go through:
-* Tensor initialization methods
-* Math operations on tensors
-* Indexing in tensors
-* Reshaping of tensors
+* Tensor **initialization** methods including type conversions
+* **Math** operations on tensors
+* **Indexing** in tensors
+* **Reshaping** of tensors
 
 To start off we can define the device that the tensors should run on 
 which we primarily set to the GPU if you have one enabled, otherwise
@@ -189,4 +188,92 @@ Different functions in PyTorch will accept different types and it is likely you 
 face many errors due to wrong input types before you are used to them. 
 
 ### Mathematical operations
-hello
+Let us start with initializing two tensors which we are used to at this point.
+
+```python
+x = torch.tensor([1, 2, 3]) 
+```
+
+```python
+y = torch.arange([9, 8, 7])
+```
+
+And let's start with the absolute simplest and work our way up. How we would add these two
+tensors togethor, and with adding I mean elementwise addition so that we obtain 1+9, 2+8 and 3+7.
+
+```python
+z = torch.add(x, y)
+z = x + y
+```
+
+Both of the above method works, and in many cases there are multiple ways of doing the same thing.
+When this is the case I prefer to do the simplest, in this case I always just use +. For subtraction
+we can simply do
+
+```python
+z = x - y
+```
+
+For division we simply do
+
+```python
+z = x / y
+```
+
+For elementwise multiplication we simply do
+
+```python
+z = x * y
+```
+
+One additional thing that could be important here is if we would want do make these operations
+inplace, meaning we update the original rather than creating a copy which leads to a bit faster
+operations. Let's say we wanted to modify x then we could do
+
+```python
+x += y # Note, x = x + y is NOT inplace
+x -= y Note, x = x - y is NOT inplace
+x /= y Note, x = x / y is NOT inplace
+x *= y Note, x = x * y is NOT inplace
+```
+
+With those basics out of the way let's focus on a little bit more advanced situations and work 
+our way up. 
+
+If we wanted to do elementwise exponentation we can do this using
+
+```python
+z = pow(x, 2)
+z = x ** 2
+```
+
+and here I prefer the second option because I think it's simpler. Let's look at doing a couple
+of simple comparisons. If we wanted to find all elements greater than a certain value, let's
+say 1 then we could do
+
+```python
+z = x > 1 # this will return a binary tensor
+```
+
+And this would also work if you instead have a matrix or a higher dimensional tensor. 
+
+Matrix multiplication
+If we start with initalizing two new tensors 
+
+```python
+a = torch.randn((2, 5))
+b = torch.randn((5, 3))
+```
+
+We can then perform matrix multiplication in PyTorch by simply doing:
+
+```python
+z = torch.mm(a, b) # mm for matrix multiply
+z = a.mm(b)
+```
+
+and here both options are equivalent. Perhaps the second is cleaner? I'll leave that for you to 
+decide. 
+
+
+
