@@ -12,7 +12,7 @@ tags:
 ---
 <script data-ad-client="ca-pub-7720049635521188" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-Note: There is a video based tutorial on YouTube which covers the same
+> Note: There is a video based tutorial on YouTube which covers the same
 as this blogpost, and if you would prefer to watch rather than read, then you can check out
 the video [here](https://youtu.be/x9JiIFvlUwk).
 
