@@ -10,72 +10,42 @@ tags:
 ---
 <script data-ad-client="ca-pub-7720049635521188" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-The first step to learning PyTorch is to understand how to structure the code when building a simple neural network.
-We will demonstrate this on a fully connected network and train it on the dataset MNIST which contains 28x28
-pixels grayscale images of hand-written digits.
+In this post we will learn how to build a simple neural network in PyTorch and also how to train it
+to classify images of handwritten digits in a very common dataset called MNIST.
 
 <p align="center">
 
   <img src="../../../../../img/in-post/mnist.png">
   Examples of Mnist images 
-
 </p>
 
 Specifically in this tutorial we will:
-* Load the  MNIST dataset from TorchVision datasets
+* Load the  MNIST dataset
 * Build a simple fully connected neural network in PyTorch
-* Create a training loop and check accuracy function
+* See how to train this network
+* Check the accuracy of our network on training data and testing data
 
 ### Imports
-First, we need to import the packages required for the code. To create 
-models in PyTorch the following packages are required. 
+First we need will need a couple of different packages
 
-<script src="https://gist.github.com/aladdinpersson/718e3e7a191236662aca46f4637eed7e.js"></script>
+<script src="https://gist.github.com/aladdinpersson/b29ceede3729fb8fc2cc4ef2c86560ed.js"></script>
 
-```python
-import torch # just torch
-import torchvision # popular datasets, models etc.
-import torch.nn as nn # all neural networks modules
-import torch.optim as optim # all optimizers 
-import torch.nn.functional as F # functions without parameters 
-```
 For loading the classical dataset [MNIST](https://pytorch.org/docs/stable/torchvision/datasets.html#mnist) we need the following packages
-from PyTorch. 
+from PyTorch we can do this using torchvision as follows
+
 <script src="https://gist.github.com/aladdinpersson/620d1357098bf866c5843ce1a8424676.js"></script>
 
-```python
-from torch.utils.data import DataLoader # data management 
-import torchvision.datasets as datasets # standard datasets
-import torchvision.transforms as transforms # data processing
-```  
-Note that `torchvision.datasets` contains many standard datasets
+Note that `torchvision.datasets` contains many more "standard datasets" that you may want to play
+around with as well,
 such as [CIFAR-10](https://pytorch.org/docs/stable/torchvision/datasets.html#cifar) and [SVHN](https://pytorch.org/docs/stable/torchvision/datasets.html#svhn) which can easily be loaded into PyTorch.  
+
 ### Loading the data
 In this tutorial we use `torchvision.datasets` to load the data and if you are starting out learning deep
 learning they provide several datasets you can start working with to learn modelling and training before you dive into 
 custom datasets. The following lines are all that's needed to load the MNIST train and test data.
 
-```python
-batch_size = 64
-train_dataset = datasets.MNIST( 
-    root="dataset/",
-    train=True,
-    transform=transforms.ToTensor(),
-    download=True,
-)
-train_loader = DataLoader(
-    dataset=train_dataset, batch_size=batch_size, shuffle=True
-)
-test_dataset = datasets.MNIST(
-    root="dataset/",
-    train=False,
-    transform=transforms.ToTensor(),
-    download=True,
-)
-test_loader = DataLoader(
-    dataset=test_dataset, batch_size=batch_size, shuffle=True
-)
-``` 
+<script src="https://gist.github.com/aladdinpersson/703f7a8233e5ec0f84a0398881aa1d11.js"></script>
+
 The `train_dataset` and `test_dataset` are Torchvision dataset objects and in this example
 the only transform we apply to the images and labels is to convert them to PyTorch tensors with
 `transforms.ToTensor()`. The `DataLoader()` returns an iterator which will generate batches of the selected 
