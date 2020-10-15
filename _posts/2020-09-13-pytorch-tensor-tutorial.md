@@ -12,16 +12,15 @@ tags:
 ---
 <script data-ad-client="ca-pub-7720049635521188" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-> Note: There is a video based tutorial on YouTube which covers the same
-as this blogpost, and if you would prefer to watch rather than read, then you can check out
-the video [here](https://youtu.be/x9JiIFvlUwk).
+> Note: There is a video based tutorial on YouTube which covers the same material as this blogpost,
+> and if you prefer to watch rather than read, then you can check out the video [here](https://youtu.be/x9JiIFvlUwk).
 
 
-In this post we want to try and get a solid foundation with tensor which
-is what all of deep learning is based off. All the fancy neural networks,
-you can imagine all start with tensor operations. Explained like that you
-quickly realize that it's something important to have a deep (no pun intended)
-understanding of.
+In this post we want to get a solid foundation with tensors and their operations which
+really lay the foundation to all of deep learning. Linear algebra really. 
+All the fancy neural networks, you can imagine all start with tensor operations. 
+Explained like that you quickly realize that it's something important tha we want to have a deep 
+(pun intended) understanding of.
 
 Concretely what we want to understand is the essential tensor 
 operations that we need to know, but we will also get a bit beyond those
