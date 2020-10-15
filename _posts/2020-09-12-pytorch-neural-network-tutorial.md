@@ -14,6 +14,7 @@ In this post we will learn how to build a simple neural network in PyTorch and a
 to classify images of handwritten digits in a very common dataset called MNIST.
 
 <p align="center">
+
   <img src="../../../../../img/in-post/mnist.png">
   Examples of Mnist images 
 </p>
@@ -27,18 +28,12 @@ Specifically in this tutorial we will:
 ### Imports
 First we need will need a couple of different packages
 
-```python
-import torch
-import this
-import that
-```
+<script src="https://gist.github.com/aladdinpersson/b29ceede3729fb8fc2cc4ef2c86560ed.js"></script>
 
 For loading the classical dataset [MNIST](https://pytorch.org/docs/stable/torchvision/datasets.html#mnist) we need the following packages
 from PyTorch we can do this using torchvision as follows
 
-```python
-import torchvision
-```
+<script src="https://gist.github.com/aladdinpersson/620d1357098bf866c5843ce1a8424676.js"></script>
 
 Note that `torchvision.datasets` contains many more "standard datasets" that you may want to play
 around with as well,
@@ -49,10 +44,7 @@ In this tutorial we use `torchvision.datasets` to load the data and if you are s
 learning they provide several datasets you can start working with to learn modelling and training before you dive into 
 custom datasets. The following lines are all that's needed to load the MNIST train and test data.
 
-```python
-import load_data
-print(load_data)
-```
+<script src="https://gist.github.com/aladdinpersson/703f7a8233e5ec0f84a0398881aa1d11.js"></script>
 
 The `train_dataset` and `test_dataset` are Torchvision dataset objects and in this example
 the only transform we apply to the images and labels is to convert them to PyTorch tensors with
@@ -70,7 +62,6 @@ are defined in the `__init__()` function. These modules can for example be a ful
 propagation of the model is performed by calling the defined modules and applying activation functions from 
 `nn.functional` onto the input. When building the model you don't have to think about back-propagation as 
 this will be taken care of automatically by PyTorch autograd.
-
 ```python
 class NN(nn.Module):
     def __init__(self, input_size, num_classes):
@@ -192,5 +183,6 @@ If you follow this tutorial you should expect to see a test accuracy of over 90 
 after one epoch of training. 
 Leave a comment if you have any thoughts or questions!
 
-Link to [Github](https://github.com/AladdinPersson)
+Link to [Github](https://github.com/AladdinPerzon)
+
 If you want to watch a video on the content check out: [Neural Network example](https://www.youtube.com/watch?v=Jy4wM2X21u0)
