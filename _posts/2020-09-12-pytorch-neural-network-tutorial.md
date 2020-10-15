@@ -29,6 +29,9 @@ Specifically in this tutorial we will:
 ### Imports
 First, we need to import the packages required for the code. To create 
 models in PyTorch the following packages are required. 
+
+<script src="https://gist.github.com/aladdinpersson/718e3e7a191236662aca46f4637eed7e.js"></script>
+
 ```python
 import torch # just torch
 import torchvision # popular datasets, models etc.
