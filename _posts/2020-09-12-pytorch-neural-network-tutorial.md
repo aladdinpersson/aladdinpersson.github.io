@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PyTorch Neural Network Tutorial"
-subtitle: 'In this post we learn how to build & train a neural network in PyTorch'
+subtitle: 'In this post we learn how to build & train a simple neural network in PyTorch'
 author: "Aladdin Persson & Sanna Persson"
 header-style: text
 highlighter: rouge
@@ -12,7 +12,6 @@ tags:
 ---
 
 > Note: There is a video based tutorial on YouTube which covers the same material as this blogpost, and if you prefer to watch rather than read, then you can check out the video [here](https://www.youtube.com/watch?v=Jy4wM2X21u0).
-
 
 In this post we will learn how to build a simple neural network in PyTorch and also how to train it
 to classify images of handwritten digits in a very common dataset called MNIST.
@@ -69,7 +68,7 @@ cuda enabled the code will make sure all training is run on the GPU by
 transferring the model and data `.to(device)`.
 
 
-<script src="https://gist.github.com/f5e14ec24d3b04da628b3356a7c878e2"> </script>
+<script src="https://gist.github.com/f5e14ec24d3b04da628b3356a7c878e2.js"> </script>
 
 
 Then, we initialize an instance of the model `NN`, the optimizer and the loss function.
@@ -94,11 +93,6 @@ with the optimizer.
 
 <script src="https://gist.github.com/6039b83bb56aea5dfe9c2b7044a5fb24.js"> </script>
 
-
-    Epoch: 0
-    Epoch: 1
-    Epoch: 2
-    
 
 Lastly, we want to make sure our model is learning by computing the accuracy on
 the training and test set. We will therefore code a function which checks the
