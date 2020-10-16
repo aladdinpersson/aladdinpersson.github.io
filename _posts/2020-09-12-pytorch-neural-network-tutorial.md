@@ -102,14 +102,16 @@ a forward pass on all batches in the dataloader, compute the predictions and the
 count how many predictions that correspond to the correct labels. 
 
 
-https://gist.github.com/7844a811f7659783f9763eb6870c6642
 
-https://gist.github.com/808836ea39d790e1e6bdea2cb0573ea2
+<script src="https://gist.github.com/7844a811f7659783f9763eb6870c6642"> </script>
+
+
+<script src="https://gist.github.com/808836ea39d790e1e6bdea2cb0573ea2"> </script>
 
     Got 58613 / 60000 with accuracy 97.69
     Got 9687 / 10000 with accuracy 96.87
     
 
-If you follow this tutorial you should expect to see a test accuracy of over 95% after one epoch of training. So after following this tutorial you learned how to setup a neural network in PyTorch, how to load data, train the network and finally see how well it performs on training and test data! 
+If you follow this tutorial you should expect to see a test accuracy of over 95% after three epochs of training. So after following this tutorial you learned how to setup a neural network in PyTorch, how to load data, train the network and finally see how well it performs on training and test data! 
 
 Leave a comment preferably on the [YouTube video](https://www.youtube.com/watch?v=Jy4wM2X21u0) if you have any thoughts or questions! [Here](https://github.com/AladdinPersson/machine-learning-collection) is a link to the Github repository where you can find this code, and many more similar to this!
