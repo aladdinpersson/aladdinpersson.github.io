@@ -103,10 +103,9 @@ count how many predictions that correspond to the correct labels.
 
 
 
-<script src="https://gist.github.com/7844a811f7659783f9763eb6870c6642"> </script>
+<script src="https://gist.github.com/7844a811f7659783f9763eb6870c6642.js"> </script>
 
-
-<script src="https://gist.github.com/808836ea39d790e1e6bdea2cb0573ea2"> </script>
+<script src="https://gist.github.com/aladdinpersson/808836ea39d790e1e6bdea2cb0573ea2.js"> </script>
 
     Got 58613 / 60000 with accuracy 97.69
     Got 9687 / 10000 with accuracy 96.87
