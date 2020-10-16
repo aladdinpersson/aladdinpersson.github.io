@@ -26,16 +26,12 @@ Specifically in this tutorial we will:
 ### Imports
 First we need will need a couple of different packages
 
-
-<script src="https://gist.github.com/58fddaa31ca840acec525e05de0da741"> </script>
-
+<script src="https://gist.github.com/58fddaa31ca840acec525e05de0da741.js"> </script>
 
 For loading the classical dataset [MNIST](https://pytorch.org/docs/stable/torchvision/datasets.html#mnist) we need the following packages
 from PyTorch we can do this using torchvision as follows
 
-
-<script src="https://gist.github.com/006db2cd57571d14ad786340084840ec"> </script>
-
+<script src="https://gist.github.com/006db2cd57571d14ad786340084840ec.js"> </script>
 
 Note that `torchvision.datasets` contains many more "standard datasets" that you may want to play
 around with as well,
