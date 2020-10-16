@@ -15,13 +15,15 @@ Specifically in this tutorial we will:
 First we need will need a couple of different packages
 
 
-https://gist.github.com/58fddaa31ca840acec525e05de0da741
+<script src="https://gist.github.com/58fddaa31ca840acec525e05de0da741"> </script>
+
 
 For loading the classical dataset [MNIST](https://pytorch.org/docs/stable/torchvision/datasets.html#mnist) we need the following packages
 from PyTorch we can do this using torchvision as follows
 
 
-https://gist.github.com/006db2cd57571d14ad786340084840ec
+<script src="https://gist.github.com/006db2cd57571d14ad786340084840ec"> </script>
+
 
 Note that `torchvision.datasets` contains many more "standard datasets" that you may want to play
 around with as well,
@@ -33,7 +35,8 @@ learning they provide several datasets you can start working with before you div
 custom datasets. The following lines are all that's needed to load the MNIST train and test data. Here we are also setting a `batch size` which will be the amount of examples our network will see at a time when performing update steps.
 
 
-https://gist.github.com/02e6e466c1a693c45ab5d85d93f15e34
+<script src="https://gist.github.com/02e6e466c1a693c45ab5d85d93f15e34.js"> </script>
+
 
 The `train_dataset` and `test_dataset` are `Torchvision` dataset objects and in this example the only transform we apply to the images and labels is to convert them to PyTorch tensors with `transforms.ToTensor()` and this is a necessary step to train our network. The `DataLoader()` returns an iterator which will generate batches of the selected batch_size as tuples of `(data, labels)`. We will therefor obtain 64 images at the same time from a batch with the associated correct label digit with those images. The argument `shuffle` determines whether these batches will be shuffled and you can default to setting it to True unless you are working with inherent sequential data. New batches will then be randomly selected each epoch which makes sure that the 64 examples inside a batch will be different from epoch to epoch.
 
@@ -45,7 +48,8 @@ propagation of the model is performed by calling the defined modules and applyin
 this will be taken care of automatically by PyTorch autograd.
 
 
-https://gist.github.com/f4964bf51bcedce288defae4652ae4fc
+<script src="https://gist.github.com/f4964bf51bcedce288defae4652ae4fc.js"> </script>
+
 
 In this network we use the rectified nonlinear unit (ReLU) activation function and apply it in the forward propagation using ```F.relu()``` and the fully connected network has one input layer, one hidden layer and one output layer with 10 nodes, one for each digit 0-9.
 
@@ -57,8 +61,8 @@ cuda enabled the code will make sure all training is run on the GPU by
 transferring the model and data `.to(device)`.
 
 
+<script src="https://gist.github.com/f5e14ec24d3b04da628b3356a7c878e2"> </script>
 
-https://gist.github.com/f5e14ec24d3b04da628b3356a7c878e2
 
 Then, we initialize an instance of the model `NN`, the optimizer and the loss function.
 When we initialize the model the weights and biases of the model will be initialized
@@ -71,7 +75,8 @@ which applies the softmax function and negative log likelihood given the predict
 of the model and data labels. This is also the reason why we do not apply softmax to the outputs from our neural network, because it is already included in `CrossEntropyLoss` and we do not want to apply it twice.
 
 
-https://gist.github.com/53f5890be03ba3bade02d432ad878865
+<script src="https://gist.github.com/53f5890be03ba3bade02d432ad878865.js"> </script>
+
 
 Now, we are ready to start training the model. We will loop through the epochs
 and then the train loader. For each batch we will perform forward propagation, 
@@ -79,8 +84,8 @@ compute the loss, calculate the gradients in back-propagation and update the wei
 with the optimizer. 
 
 
+<script src="https://gist.github.com/6039b83bb56aea5dfe9c2b7044a5fb24.js"> </script>
 
-https://gist.github.com/6039b83bb56aea5dfe9c2b7044a5fb24
 
     Epoch: 0
     Epoch: 1
@@ -101,11 +106,11 @@ under `with torch.no_grad()`. To check the accuracy of the model we will perform
 a forward pass on all batches in the dataloader, compute the predictions and then 
 count how many predictions that correspond to the correct labels. 
 
-
-
 <script src="https://gist.github.com/7844a811f7659783f9763eb6870c6642.js"> </script>
 
-<script src="https://gist.github.com/aladdinpersson/808836ea39d790e1e6bdea2cb0573ea2.js"> </script>
+And then let's call `get_accuracy` on both training and test set.
+
+<script src="https://gist.github.com/808836ea39d790e1e6bdea2cb0573ea2.js"> </script>
 
     Got 58613 / 60000 with accuracy 97.69
     Got 9687 / 10000 with accuracy 96.87
