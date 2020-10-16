@@ -1,6 +1,18 @@
-***
-Note: There is a video based tutorial on YouTube which covers the same material as this blogpost, and if you prefer to watch rather than read, then you can check out the video [here](https://www.youtube.com/watch?v=Jy4wM2X21u0).
-***
+---
+layout: post
+title: "PyTorch Neural Network Tutorial"
+subtitle: 'In this post we learn how to build & train a neural network in PyTorch'
+author: "Aladdin Persson & Sanna Persson"
+header-style: text
+highlighter: rouge
+mathjax: true
+math: true
+tags:
+  - PyTorch
+---
+
+> Note: There is a video based tutorial on YouTube which covers the same material as this blogpost, and if you prefer to watch rather than read, then you can check out the video [here](https://www.youtube.com/watch?v=Jy4wM2X21u0).
+
 
 In this post we will learn how to build a simple neural network in PyTorch and also how to train it
 to classify images of handwritten digits in a very common dataset called MNIST.
