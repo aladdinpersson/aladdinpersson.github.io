@@ -15,6 +15,9 @@ tags:
 
 * content
 {:toc}
+In this post we learn how to create a simple progress bar which is incredibly useful when training neural nets :)
+> Note: There is a video based tutorial on YouTube which covers the same material as this blogpost, and if you prefer to watch rather than read, then you can check out the video [here](https://youtu.be/RKHopFfbPao).
+
 
 
 Let us start with the basic imports where we will be using tqdm for our progress bar:
