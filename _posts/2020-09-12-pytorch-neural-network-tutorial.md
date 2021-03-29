@@ -7,14 +7,25 @@ header-style: text
 highlighter: rouge
 mathjax: true
 math: true
+categories: 
+  - PyTorch
 tags:
   - PyTorch
 ---
+
+
+* content
+{:toc}
+
 
 > Note: There is a video based tutorial on YouTube which covers the same material as this blogpost, and if you prefer to watch rather than read, then you can check out the video [here](https://www.youtube.com/watch?v=Jy4wM2X21u0).
 
 In this post we will learn how to build a simple neural network in PyTorch and also how to train it
 to classify images of handwritten digits in a very common dataset called MNIST.
+
+
+
+
 
 Specifically in this tutorial we will:
 * Load the  MNIST dataset
@@ -22,7 +33,7 @@ Specifically in this tutorial we will:
 * See how to train this network
 * Check the accuracy of our network on training data and testing data
 
-### Imports
+## Imports
 First we need will need a couple of different packages
 
 <script src="https://gist.github.com/58fddaa31ca840acec525e05de0da741.js"> </script>
@@ -36,7 +47,7 @@ Note that `torchvision.datasets` contains many more "standard datasets" that you
 around with as well,
 such as [CIFAR-10](https://pytorch.org/docs/stable/torchvision/datasets.html#cifar) and [SVHN](https://pytorch.org/docs/stable/torchvision/datasets.html#svhn) which can easily be loaded into PyTorch.  
 
-### Loading the data
+## Loading the data
 In this tutorial we use `torchvision.datasets` to load the data and if you are starting out learning deep
 learning they provide several datasets you can start working with before you dive into 
 custom datasets. The following lines are all that's needed to load the MNIST train and test data. Here we are also setting a `batch size` which will be the amount of examples our network will see at a time when performing update steps.
@@ -47,7 +58,7 @@ custom datasets. The following lines are all that's needed to load the MNIST tra
 
 The `train_dataset` and `test_dataset` are `Torchvision` dataset objects and in this example the only transform we apply to the images and labels is to convert them to PyTorch tensors with `transforms.ToTensor()` and this is a necessary step to train our network. The `DataLoader()` returns an iterator which will generate batches of the selected batch_size as tuples of `(data, labels)`. We will therefor obtain 64 images at the same time from a batch with the associated correct label digit with those images. The argument `shuffle` determines whether these batches will be shuffled and you can default to setting it to True unless you are working with inherent sequential data. New batches will then be randomly selected each epoch which makes sure that the 64 examples inside a batch will be different from epoch to epoch.
 
-### Building the model
+## Building the model
 In PyTorch the general way of building a model is to create a class where the neural network modules you want to use
 are defined in the `__init__()` function. These modules can for example be a fully connected layer initialized by 
 `nn.Linear(input_features, output_features)`. We then define a function `forward()` in which the forward
@@ -60,7 +71,7 @@ this will be taken care of automatically by PyTorch autograd.
 
 In this network we use the rectified nonlinear unit (ReLU) activation function and apply it in the forward propagation using ```F.relu()``` and the fully connected network has one input layer, one hidden layer and one output layer with 10 nodes, one for each digit 0-9.
 
-### Setting up the training loop
+## Setting up the training loop
 We have now arrived to the point where we are ready to put it all together and
 train the model. First we will define some hyperparameters that are required
 for the training of the network. If you are using a GPU for the training and have 
